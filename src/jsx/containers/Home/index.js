@@ -1,6 +1,9 @@
 import React, { Fragment, useState, useEffect, useContext } from "react";
 import { onAuthStateChanged } from "firebase/auth";
-import axios from "axios";
+import { render } from "react-dom";
+import { Container } from "./example";
+import { DndProvider } from "react-dnd";
+import { HTML5Backend } from "react-dnd-html5-backend";
 
 //
 /**
@@ -8,57 +11,59 @@ import axios from "axios";
  * @function
  **/
 
+import { auth } from "../../../firebase";
+
 const Home = (props) => {
-  const [emails, setEmail] = useState([]);
   const [authUser, setAuthUser] = useState(false);
   const [user, setUser] = useState("");
-
-  const fetchOrders = async () => {
-    try {
-      const response = await axios.get(
-        "https://kiglerserver.com/api/v1/contactUs/"
-      ); // Adjust the API endpoint
-      setEmail(response.data);
-    } catch (error) {
-      console.error("Error fetching orders:", error);
-    }
-  };
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
         setAuthUser(true);
         setUser(user.email);
-        fetchOrders();
       } else {
-        navigate("/signin");
+        // navigate("/signin");
       }
     });
   }, [authUser]);
 
-  const deleteProduct = async (orderId) => {
-    console.log("Deleting order:", orderId);
-    // try {
-    //   const response = await axios.delete(
-    //     `https://kiglerserver.com/api/v1/citizen/${orderId}`
-    //   );
-    //   setDel(!status22);
-    // } catch (error) {
-    //   console.error("Error deleting order:", error);
-    // }
-  };
-
-  const edit = async (product) => {
-    console.log("setEdit_id", product._id);
-    // setEdit_id(product._id);
-    // setProductPic(product);
-    // setFormData(product);
-    // handleShow();
-  };
-
   return (
     <div>
-      <h1>SSSS</h1>
+      <div className="row mt-10 mb-5">
+        <div className="col-lg-12 m-auto ">
+          <div className="profile card card-body px-3 pt-3 pb-0 m-auto  ">
+            <div className="profile-head m-auto ">
+              <div className="photo-content ">
+                {/* <div className="cover-photo rounded"></div> */}
+              </div>
+              <div className="profile-info">
+                <div
+                  className="profile-name px-3 pt-2"
+                  style={{
+                    textAlign: "center",
+                  }}
+                >
+                  <h3 className="text-red">TODO LIST </h3>
+                  <h3 className="text-red"> {user} שלום לך </h3>
+                  <p className="">
+                    כאן תוכלו ליצור לעדכן ולמחוק פתקים, לאחר לחיצה על כפתור שמור
+                    שינוים המידע ישמר כולל סדר הפתקים, תהנו
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div className="sfd">
+          <DndProvider backend={HTML5Backend}>
+            <Container user={user} />
+          </DndProvider>
+        </div>
+      </div>
     </div>
   );
 };

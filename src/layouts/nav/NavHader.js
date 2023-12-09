@@ -20,9 +20,9 @@ const NavHader = () => {
     useContext(ThemeContext);
   return (
     <div className="nav-header">
-      <Link to="/form-validation" className="brand-logo">
+      <Link to="/" className="brand-logo">
         <Fragment>
-          <svg
+          {/* <svg
             version="1.0"
             xmlns="http://www.w3.org/2000/svg"
             width="200.000000pt"
@@ -83,7 +83,7 @@ l5 65 5 -65 c6 -61 7 -65 31 -65 25 0 25 1 21 70 -2 39 -8 76 -13 83 -6 6 -33
 20 -122 0 -123 0 -105 -20z"
               />
             </g>
-          </svg>
+          </svg> */}
         </Fragment>
       </Link>
 

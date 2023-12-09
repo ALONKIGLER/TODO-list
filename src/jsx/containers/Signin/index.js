@@ -5,7 +5,7 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { signOut } from "firebase/auth";
 //
-import { Navigate } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 
 /**
  * @author
@@ -60,7 +60,7 @@ const Signin = (props) => {
       const userToken = await user.getIdToken();
       console.log("ddd");
       setToken(userToken);
-      <Navigate to="/jlk" />;
+      <Navigate to="home" />;
     } catch {
       setNotice("You entered a wrong username or password.");
     }
@@ -75,7 +75,23 @@ const Signin = (props) => {
 
   return (
     <div>
-      <h1>signin</h1>
+      {" "}
+      <div>
+        <div className="row">
+          <div className="col-lg-12 m-auto ">
+            <div className="profile card card-body px-3 pt-3 pb-0 m-auto  ">
+              <div className="profile-head m-auto ">
+                <div className="photo-content ">
+                  {/* <div className="cover-photo rounded"></div> */}
+                </div>
+                <div className="profile-info">
+                  <h3 className="text-red"> signin</h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       <div className="container">
         <div className="row justify-content-center">
           <form className="col-md-4 mt-3 pt-3 pb-3">
@@ -124,10 +140,12 @@ const Signin = (props) => {
               </button>
             </div>
             <div className="mt-3 text-center">
-              <span>
-                support@rsecurity.tech צור קשר על מנת להירשם
-                {/* <Link to="./signup">Click here.</Link> */}
-              </span>
+              <span>עדיין לא רשום, לחץ על הקישור והירשם </span>
+            </div>
+            <div className="mt-3 text-center">
+              <Link className="btn btn-primary pt-1 pb-1" to="/signup">
+                Signup
+              </Link>
             </div>
           </form>
         </div>

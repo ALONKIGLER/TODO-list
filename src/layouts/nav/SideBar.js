@@ -218,30 +218,40 @@ const SideBar = () => {
         </div> */}
         <div className="copyright">
           <p className=" fs-12 text-center" style={{ fontSize: "1rem" }}>
-            <a style={{ fontSize: "1rem" }} href="tel:1201">
-              ער"ן - עזרה ראשונה נפשית - 1201
+            <a
+              style={{ fontSize: "1rem" }}
+              href="https://www.linkedin.com/in/alon-kigler/"
+            >
+              חשבון הלינקדין שלי{" "}
             </a>
           </p>
           <p className="fs-12 text-center">
-            <a style={{ fontSize: "1rem" }} href="tel:037472010">
-              מוקד תמיכה וסיוע נפשי 03-7472010
+            <a style={{ fontSize: "1rem" }} href="tel:0507353157">
+              מספר פלאפון 0507353157{" "}
             </a>
           </p>
           <p className="fs-12 text-center">
-            <a style={{ fontSize: "1rem" }} href="tel:1111">
-              מוקד פניית הציבור של אגף כח אדם -1111 שלוחה 5 ולאחר מכן שלוחה 4
+            <a style={{ fontSize: "1rem" }} href="kiglerr@gmail.com">
+              kiglerr@gmail.com :אימייל{" "}
             </a>
           </p>
           <p className="fs-12 text-center">
-            <a style={{ fontSize: "1rem" }} href="tel:104">
-              מוקד פיקוד העורף - 104
+            <a
+              style={{ fontSize: "1rem" }}
+              href="https://github.com/ALONKIGLER/TODO-list"
+            >
+              :גיט הפרוייקט{" "}
             </a>
           </p>
           <p className="fs-12 text-center">
-            <a style={{ fontSize: "1rem" }} href="tel:1800363363">
-              קו סיוע עמות נטול - 1800363363{" "}
+            <a
+              style={{ fontSize: "1rem" }}
+              href=" https://github.com/ALONKIGLER/TODO-list"
+            >
+              https://github.com/ALONKIGLER/TODO-list{" "}
             </a>
           </p>
+
           {/* <p className="text-center">עם ישראל חי!!</p> */}
         </div>
         {/* <div className="copyright">fdsdsd</div> */}
